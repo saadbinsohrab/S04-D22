@@ -11,7 +11,7 @@ function multy(num1, num2){
 // ----------------------------string-------------------------------
  function full_name(fName,lName){
     if(typeof fName !== 'string' || typeof lName !== 'string'){
-        return 'please provide a string';
+        return 'name should be a string';
     }
     return fName + ' ' + lName;
  }
@@ -23,7 +23,17 @@ function object(products){
     if(typeof products !== 'object'){
         return 'please provide an object';
     }
+    else if(!products.color){
+        return 'must have a color kye';
+    }
+    else if(typeof products.color !== 'string'){
+        return ' should be a string';
+    }
+    else if(products.price <= 35000){
+        return 'should be more price';
+    }
     return products.price;
+    Array.filter ()
 }
 const get_price = object({name: 'vivo', price: 35000, color: 'blue'});
 console.log(get_price);
